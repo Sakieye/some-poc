@@ -2,16 +2,16 @@ package com.sakieye.api;
 
 public class ApiFactory {
 
-  private final IDriverApi driverApi;
-  private final ICarApi carApi;
+  private final DriverApi driverApi;
+  private final CarApi carApi;
 
   // production
   private ApiFactory() {
-    this(new DriverApi(), new CarApi());
+    this(new FmsDriverApi(), new FmsCarApi());
   }
 
   // test
-  ApiFactory(IDriverApi driverApi, ICarApi carApi) {
+  ApiFactory(DriverApi driverApi, CarApi carApi) {
     this.driverApi = driverApi;
     this.carApi = carApi;
   }
@@ -20,11 +20,11 @@ public class ApiFactory {
     return InstanceHolder.INSTANCE;
   }
 
-  public IDriverApi getDriverApi() {
+  public DriverApi getDriverApi() {
     return driverApi;
   }
 
-  public ICarApi getCarApi() {
+  public CarApi getCarApi() {
     return carApi;
   }
 

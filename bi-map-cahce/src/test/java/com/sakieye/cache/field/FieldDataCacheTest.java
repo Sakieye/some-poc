@@ -9,7 +9,7 @@ import static org.mockito.Mockito.when;
 import com.sakieye.Organization;
 import com.sakieye.api.ApiFactory;
 import com.sakieye.api.Driver;
-import com.sakieye.api.IDriverApi;
+import com.sakieye.api.DriverApi;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
@@ -26,7 +26,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 @ExtendWith(MockitoExtension.class)
 class FieldDataCacheTest {
-  private final IDriverApi driverApi = Mockito.mock(IDriverApi.class);
+  private final DriverApi driverApi = Mockito.mock(DriverApi.class);
   private final ApiFactory apiFactory = Mockito.mock(ApiFactory.class);
   private final FieldDataCache fieldDataCache = new FieldDataCache(apiFactory);
 
